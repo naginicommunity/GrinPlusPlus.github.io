@@ -435,18 +435,18 @@
   </head>
   <body>
     <!-- JavaScript will access this element and populate it.-->
-    <div id="results"></div>
+    <div id="results5"></div>
     
     
     <!-- Placing the script just before the closing body tag ensures that by the time the parser reaches this point, all the HTML will have been read into memory. -->
 
     <script type="text/javascript">
-        var apiUrl = 'https://api.bitforex.com/api/v1/market/ticker?symbol=coin-btc-grin';
-        fetch(apiUrl).then(response => {
+        var apiUrl4 = 'https://api.bitforex.com/api/v1/market/ticker?symbol=coin-btc-grin';
+        fetch(apiUrl4).then(response => {
           return response.json();
         }).then(data => {
-          let output = document.getElementById("results");
-      		output.textContent = data.last ;  // Populate the element
+          let output = document.getElementById("results5");
+      		output.textContent = data.data.last ;  // Populate the element
           console.log(data);
         }).catch(err => {
           "ERROR"
