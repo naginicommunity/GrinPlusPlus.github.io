@@ -284,7 +284,7 @@
           return response.json();
         }).then(data => {
           let output = document.getElementById("results");
-      		output.textContent = data ;  // Populate the element
+      		output.textContent = data.price ;  // Populate the element
           console.log(data);
         }).catch(err => {
           "ERROR"
