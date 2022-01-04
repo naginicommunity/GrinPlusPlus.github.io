@@ -272,23 +272,9 @@
         });
     
     </script>
-<div id="results5"></div>
-    <script type="text/javascript">
-        var apiUrl = 'https://tradeogre.com/api/v1/ticker/BTC-GRIN';
-        fetch(apiUrl).then(response => {
-          return response.json();
-        }).then(data => {
-          let output = document.getElementById("results5");
-      		output.textContent = data.price ;  // Populate the element
-          console.log(data);
-        }).catch(err => {
-          "ERROR"
-        });
-    
-    </script>
     <div id="results2"></div>
     <script type="text/javascript">
-        var apiUrl2 = 'https://api.gateio.ws/api/v4/spot/tickers';
+        var apiUrl2 = 'https://api.gateio.ws/api/v4/spot/tickers?currency_pair=GRIN_USDT';
         fetch(apiUrl2).then(response => {
           return response.json();
         }).then(data => {
@@ -298,14 +284,7 @@
         }).catch(err => {
           "ERROR"
         });
-    const request = require('request');
-const userAction = async () => {
-  const response = await fetch('https://tradeogre.com/api/v1/ticker/BTC-GRIN');
-  const myJson = await response.json(); //extract JSON from the http response
-  let output = document.getElementById("results2");
-	output = myJson ;
-}
-});
+    
     </script>
 
 <!DOCTYPE html>
@@ -326,7 +305,7 @@ const userAction = async () => {
           return response.json();
         }).then(data => {
           let output = document.getElementById("results");
-      		output = data.last ;  // Populate the element
+      		output.textContent = data.last ;  // Populate the element
           console.log(data);
         }).catch(err => {
           "ERROR"
