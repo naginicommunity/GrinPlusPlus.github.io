@@ -279,7 +279,7 @@
           return response.json();
         }).then(data => {
           let output = document.getElementById("results2");
-      		output.textContent = data[] ;  // Populate the element
+      		output.textContent = data ;  // Populate the element
           console.log(data);
         }).catch(err => {
           "ERROR"
