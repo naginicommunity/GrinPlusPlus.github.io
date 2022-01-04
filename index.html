@@ -300,7 +300,7 @@
   </head>
   <body>
     <!-- JavaScript will access this element and populate it.-->
-    <div id="results"></div>
+    <div id="results2"></div>
     
     
     <!-- Placing the script just before the closing body tag ensures that by the time the parser reaches this point, all the HTML will have been read into memory. -->
@@ -310,7 +310,7 @@
         fetch(apiUrl).then(response => {
           return response.json();
         }).then(data => {
-          let output = document.getElementById("results");
+          let output = document.getElementById("results2");
       		output.textContent = data.last ;  // Populate the element
           console.log(data);
         }).catch(err => {
