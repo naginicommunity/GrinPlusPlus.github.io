@@ -23,7 +23,7 @@
 					<h1>You will find here all you need to know about GRIN ツ </h1>
 					<p>https://tradeogre.com/api/v1/ticker/BTC-GRIN</p>
 					<div id="results"></div>
-					<div id="results2">test2</div>
+					
 					
 					<ul class="actions">
 						<li><a id="download-link" href="#" class="button primary icon fa-download">Download <small id="version"></small></a></li>
@@ -271,20 +271,6 @@
           "ERROR"
         });
     
-    </script>
-    <div id="results2"></div>
-    <script type="text/javascript">
-        var apiUrl2 = 'https://api.gateio.ws/api/v4/spot/tickers?currency_pair=GRIN_USDT';
-        fetch(apiUrl2).then(response => {
-          return response.json();
-        }).then(data => {
-          let output = document.getElementById("results2");
-      		output.textContent = data ;  // Populate the element
-          console.log(data);
-        }).catch(err => {
-          "ERROR"
-        });
     
-    </script>
 
 
