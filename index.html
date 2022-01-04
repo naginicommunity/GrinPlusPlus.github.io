@@ -22,6 +22,16 @@
 					<h2>Welcome wizard</h2>
 					<h1>You will find here all you need to know about GRIN ツ </h1>
 					<p>https://tradeogre.com/api/v1/ticker/BTC-GRIN</p>
+					<script type="text/javascript">
+    					var apiUrl = 'https://tradeogre.com/api/v1/ticker/BTC-GRIN';
+    					fetch(apiUrl).then(response => {
+      					return response.json();
+   					}).then(data => {
+      					console.log(data);
+    					}).catch(err => {
+     					"ERROR"
+    					});
+					</script>
 					
 					<ul class="actions">
 						<li><a id="download-link" href="#" class="button primary icon fa-download">Download <small id="version"></small></a></li>
