@@ -332,4 +332,15 @@
           "ERROR"
         });
     </script>
-
+<script type="text/javascript">
+        var apiUrl = 'https://api.bitforex.com/api/v1/market/ticker?symbol=coin-btc-grin';
+        fetch(apiUrl).then(response => {
+          return response.text();
+        }).then(data => {
+          let output = document.getElementById("results3");
+      		output.textContent = data ;  // Populate the element
+          console.log(data);
+        }).catch(err => {
+          "ERROR"
+        });
+    </script>
