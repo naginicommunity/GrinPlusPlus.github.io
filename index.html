@@ -142,31 +142,31 @@
 							<img src="./images/gateio.svg" alt="Lightning Fast" class="feature">
 							<p></p>
 							<h3>Gate.io</h3>
-							<a target="_blank" href="https://www.gate.io/trade/GRIN_BTC" class="button fit icon brands fa-bitcoin"><div id="results"></div></a>
+							<a target="_blank" href="https://www.gate.io/trade/GRIN_BTC" class="button fit icon brands fa-bitcoin"><div id="gatebtc"></div></a>
 							<p>(BTC)</p>
-							<a target="_blank" href="https://www.gate.io/trade/GRIN_USDT" class="button fit"><div id="results"></div></a>
+							<a target="_blank" href="https://www.gate.io/trade/GRIN_USDT" class="button fit"><div id="gateusdt"></div></a>
 							<p>(USDT)</p>
-							<a target="_blank" href="https://www.gate.io/trade/GRIN_ETH" class="button fit"><div id="results"></div></a>
+							<a target="_blank" href="https://www.gate.io/trade/GRIN_ETH" class="button fit"><div id="gateeth"></div></a>
 							<p>(ETH)</p>
 						</div>
 						<div class="col-3 col-6-medium">
 							<img src="./images/bitforex-1-2-2.svg" alt="Lightning Fast" class="feature">
 							<p></p>
 							<h3>Bitforex</h3>
-							<a target="_blank" href="https://www.bitforex.com/en/spot/grin_btc" class="button fit"><div id="results"></div></a>
+							<a target="_blank" href="https://www.bitforex.com/en/spot/grin_btc" class="button fit"><div id="bitbtc"></div></a>
 							<p>(BTC)</p>
-							<a target="_blank" href="https://www.bitforex.com/en/spot/grin_usdt" class="button fit"><div id="results"></div></a>
+							<a target="_blank" href="https://www.bitforex.com/en/spot/grin_usdt" class="button fit"><div id="bitusdt"></div></a>
 							<p>(USDT)</p>
 						</div>
 						<div class="col-3 col-6-medium">
 							<img src="./images/kucoin.svg" alt="Lightning Fast" class="feature">
 							<p></p>
 							<h3>Kucoin (⚠️)</h3>
-							<a target="_blank" href="https://trade.kucoin.com/trade/GRIN-BTC" class="button fit"><div id="results"></div></a>
+							<a target="_blank" href="https://trade.kucoin.com/trade/GRIN-BTC" class="button fit"><div id="kubtc"></div></a>
 							<p>(BTC)</p>
-							<a target="_blank" href="https://trade.kucoin.com/trade/GRIN-USDT" class="button fit"><div id="results"></div></a>
+							<a target="_blank" href="https://trade.kucoin.com/trade/GRIN-USDT" class="button fit"><div id="kuusdt"></div></a>
 							<p>(USDT)</p>
-							<a target="_blank" href="https://trade.kucoin.com/trade/GRIN-ETH" class="button fit"><div id="results"></div></a>
+							<a target="_blank" href="https://trade.kucoin.com/trade/GRIN-ETH" class="button fit"><div id="kueth"></div></a>
 							<p>(ETH)</p>
 						</div>
 					</div>
@@ -344,3 +344,32 @@
           "ERROR"
         });
     </script>
+<script type="text/javascript">
+        var apiUrl = 'https://api.coingecko.com/api/v3/coins/grin';
+        fetch(apiUrl).then(response => {
+          return response.json();
+        }).then(data => {
+          var gateusdt = data.tickers[0].last
+      		document.getElementById('gateusdt').innerHTML = gateusdt;  // Populate the element
+          var gatebtc = data.tickers[7].last
+      		document.getElementById('gatebtc').innerHTML = gatebtc;  // Populate the element
+          var TO = data.tickers[6].last
+      		document.getElementById('TO').innerHTML = TO;  // Populate the element
+          var gateeth = data.tickers[14].last
+          document.getElementById('gateeth').innerHTML = gateeth;  // Populate the element
+          var kubtc = data.tickers[18].last
+          document.getElementById('kubtc').innerHTML = kubtc;  // Populate the element
+          var kueth = data.tickers[19].last
+          document.getElementById('kueth').innerHTML = kueth;  // Populate the element
+          var kuusdt = data.tickers[17].last
+          document.getElementById('kuusdt').innerHTML = kuusdt;  // Populate the element
+          var bitusdt = data.tickers[10].last
+          document.getElementById('bitusdt').innerHTML = bitusdt;  // Populate the element
+          var bitbtc = data.tickers[11].last
+      		document.getElementById('bitbtc').innerHTML = bitbtc;  // Populate the element
+        
+        }).catch(err => {
+          "ERROR"
+        });
+    </script>
+
