@@ -367,7 +367,8 @@
           document.getElementById('kuusdt').innerHTML = kuusdt;  // Populate the element
           var kueth = data.tickers[19].last
           document.getElementById('kueth').innerHTML = kueth;  // Populate the element
-          
+          var TO = data.tickers[6].last
+      		document.getElementById('TO').innerHTML = TO;  // Populate the element
           
         
         }).catch(err => {
