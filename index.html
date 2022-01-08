@@ -307,31 +307,59 @@
     
 
 <script type="text/javascript">
-        var apiUrl = 'https://api.coingecko.com/api/v3/coins/grin';
+	var apiUrl = 'https://api.coingecko.com/api/v3/exchanges/trade_ogre/tickers?coin_ids=grin';
         fetch(apiUrl).then(response => {
           return response.json();
         }).then(data => {
-		var TO = data.tickers[6].last
+          console.log(data.tickers);
+          var TO = data.tickers[0].last
       		document.getElementById('TO').innerHTML = TO;  // Populate the element
-		var gatebtc = data.tickers[7].last
+          // Populate the element
+        
+        }).catch(err => {
+          "ERROR"
+        });
+        var apiUrl = 'https://api.coingecko.com/api/v3/exchanges/gate/tickers?coin_ids=grin';
+        fetch(apiUrl).then(response => {
+          return response.json();
+        }).then(data => {
+          console.log(data.tickers[1].last);
+          var gatebtc = data.tickers[1].last
       		document.getElementById('gatebtc').innerHTML = gatebtc;  // Populate the element
           var gateusdt = data.tickers[0].last
       		document.getElementById('gateusdt').innerHTML = gateusdt;  // Populate the element
-          var gateeth = data.tickers[14].last
-          document.getElementById('gateeth').innerHTML = gateeth;  // Populate the element
-		var bitbtc = data.tickers[11].last
+          var gateeth = data.tickers[2].last
+      		document.getElementById('gateeth').innerHTML = gateeth;  // Populate the element
+            // Populate the element
+        
+        }).catch(err => {
+          "ERROR"
+        });
+	var apiUrl = 'https://api.coingecko.com/api/v3/exchanges/bitforex/tickers?coin_ids=grin';
+        fetch(apiUrl).then(response => {
+          return response.json();
+        }).then(data => {
+          console.log(data.tickers);
+          var bitbtc = data.tickers[1].last
       		document.getElementById('bitbtc').innerHTML = bitbtc;  // Populate the element
-		var bitusdt = data.tickers[10].last
-          document.getElementById('bitusdt').innerHTML = bitusdt;  // Populate the element
-          var kubtc = data.tickers[18].last
-          document.getElementById('kubtc').innerHTML = kubtc;  // Populate the element
-		var kuusdt = data.tickers[17].last
-          document.getElementById('kuusdt').innerHTML = kuusdt;  // Populate the element
-          var kueth = data.tickers[19].last
-          document.getElementById('kueth').innerHTML = kueth;  // Populate the element
-          var TO = data.tickers[6].last
-      		document.getElementById('TO').innerHTML = TO;  // Populate the element
-          
+          var bitusdt = data.tickers[0].last
+      		document.getElementById('bitusdt').innerHTML = bitusdt;  // Populate the element
+  
+        
+        }).catch(err => {
+          "ERROR"
+        });
+	var apiUrl = 'https://api.coingecko.com/api/v3/exchanges/kucoin/tickers?coin_ids=grin';
+        fetch(apiUrl).then(response => {
+          return response.json();
+        }).then(data => {
+          console.log(data.tickers);
+          var kubtc = data.tickers[1].last
+      		document.getElementById('kubtc').innerHTML = kubtc;  // Populate the element
+          var kuusdt = data.tickers[0].last
+      		document.getElementById('kuusst').innerHTML = kuusdt;  // Populate the element
+          var kueth = data.tickers[2].last
+      		document.getElementById('kueth').innerHTML = kueth;  // Populate the element
         
         }).catch(err => {
           "ERROR"
