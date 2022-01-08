@@ -349,24 +349,26 @@
         fetch(apiUrl).then(response => {
           return response.json();
         }).then(data => {
+		var TO = data.tickers[6].last
+      		document.getElementById('TO').innerHTML = TO;  // Populate the element
+		var gatebtc = data.tickers[7].last
+      		document.getElementById('gatebtc').innerHTML = gatebtc;  // Populate the element
           var gateusdt = data.tickers[0].last
       		document.getElementById('gateusdt').innerHTML = gateusdt;  // Populate the element
-          var gatebtc = data.tickers[7].last
-      		document.getElementById('gatebtc').innerHTML = gatebtc;  // Populate the element
-          var TO = data.tickers[6].last
-      		document.getElementById('TO').innerHTML = TO;  // Populate the element
           var gateeth = data.tickers[14].last
           document.getElementById('gateeth').innerHTML = gateeth;  // Populate the element
+		var bitbtc = data.tickers[11].last
+      		document.getElementById('bitbtc').innerHTML = bitbtc;  // Populate the element
+		var bitusdt = data.tickers[10].last
+          document.getElementById('bitusdt').innerHTML = bitusdt;  // Populate the element
           var kubtc = data.tickers[18].last
           document.getElementById('kubtc').innerHTML = kubtc;  // Populate the element
+		var kuusdt = data.tickers[17].last
+          document.getElementById('kuusdt').innerHTML = kuusdt;  // Populate the element
           var kueth = data.tickers[19].last
           document.getElementById('kueth').innerHTML = kueth;  // Populate the element
-          var kuusdt = data.tickers[17].last
-          document.getElementById('kuusdt').innerHTML = kuusdt;  // Populate the element
-          var bitusdt = data.tickers[10].last
-          document.getElementById('bitusdt').innerHTML = bitusdt;  // Populate the element
-          var bitbtc = data.tickers[11].last
-      		document.getElementById('bitbtc').innerHTML = bitbtc;  // Populate the element
+          
+          
         
         }).catch(err => {
           "ERROR"
